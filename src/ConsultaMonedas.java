@@ -9,7 +9,7 @@ public class ConsultaMonedas {
     public Monedas conversionMonedas (String par1, String par2, double monto){
         String apiKey="20c32d86ca20642117ac5c7a";
         URI address = URI.create("https://v6.exchangerate-api.com/v6/" + apiKey + "/pair/"+par1+"/"+par2+"/"+monto);
-//        System.out.println(address);
+        System.out.println(address);
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(address)
