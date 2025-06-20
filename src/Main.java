@@ -37,12 +37,10 @@ public class Main {
 
             switch (opcion){
                 case 1 -> {
-                    System.out.println("Opcion: "+opcion);
                     par1 = listMonedas.get(5);
                     par2 = listMonedas.get(0);
                 }
                 case 2 -> {
-                    System.out.println("Opcion: "+opcion);
                     par1 = listMonedas.get(0);
                     par2 = listMonedas.get(5);
                 }
@@ -75,14 +73,15 @@ public class Main {
                     System.out.println("Opcion invalida");
                 }
             }
-            if (opcion>1 && opcion<7) {
-//            System.out.println("Pares: " + par1 + " y " + par2);
+            if (opcion>0 && opcion<7) {
+                System.out.println("Conversion de " + par1 +" a " + par2);
                 ConsultaMonedas conversion = new ConsultaMonedas();
                 System.out.println("Escriba el monto a convertir");
 
                 int montoBase = reader.nextInt();
                 Monedas monedas = conversion.conversionMonedas(par1, par2, montoBase);
-                System.out.println(monedas);
+                System.out.println(montoBase + " " + par1 +" equivalen a " + monedas.conversion_result() +
+                        " " + par2);
             }
             System.out.println("Saliendo de Convertidor");
         }
